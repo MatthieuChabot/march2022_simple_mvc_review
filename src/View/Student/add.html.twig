@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Ajouter un nouvel élève</h1>
+
+    <form method="post">
+        <p>
+            <label for="firstname">Prénom : </label>
+            <input type="text" name="firstname" id="firstname">
+        </p>
+
+        <p>
+            <label for="lastname">Nom : </label>
+            <input type="text" name="lastname" id="lastname">
+        </p>
+
+        <p>
+            <label for="photo">Photo : </label>
+            <input type="text" name="photo" id="photo">
+        </p>
+
+        <p>
+            <label for="class">Classe : </label>
+            <select name="class" id="class">
+                {% for class in classes %}
+                    <option value="{{ class.id }}">{{ class.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <button>Instruire !</button>
+    </form>
+{% endblock %}
